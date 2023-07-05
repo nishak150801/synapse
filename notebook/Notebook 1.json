@@ -13,11 +13,12 @@
 			"executorMemory": "28g",
 			"executorCores": 4,
 			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "3b2f5d2d-19dc-432c-8d03-0e89a5ed79fe"
+				"spark.autotune.trackingId": "4f33d2fb-75fa-405a-80f5-f8bac3c82f34"
 			}
 		},
 		"metadata": {
@@ -37,13 +38,14 @@
 				"endpoint": "https://nishaworkspace.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Demo",
 				"auth": {
 					"type": "AAD",
-					"authResource": "https://dev.azuresynapse.net"
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
 				},
 				"sparkVersion": "3.3",
 				"nodeCount": 10,
 				"cores": 4,
 				"memory": 28,
-				"automaticScaleJobs": false
+				"extraHeader": null
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -59,8 +61,7 @@
 					"%%sql\r\n",
 					"\r\n",
 					"SELECT 1"
-				],
-				"execution_count": null
+				]
 			}
 		]
 	}
