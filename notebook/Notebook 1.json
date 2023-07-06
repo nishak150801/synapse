@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "4f33d2fb-75fa-405a-80f5-f8bac3c82f34"
+				"spark.autotune.trackingId": "f09d860c-25e2-469e-85ba-aa7690ee6be8"
 			}
 		},
 		"metadata": {
@@ -38,14 +38,13 @@
 				"endpoint": "https://nishaworkspace.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Demo",
 				"auth": {
 					"type": "AAD",
-					"authResource": "https://dev.azuresynapse.net",
-					"authHeader": null
+					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.3",
 				"nodeCount": 10,
 				"cores": 4,
 				"memory": 28,
-				"extraHeader": null
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -61,7 +60,32 @@
 					"%%sql\r\n",
 					"\r\n",
 					"SELECT 1"
-				]
+				],
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"\r\n",
+					"SELECT 1+1"
+				],
+				"execution_count": 1
 			}
 		]
 	}
