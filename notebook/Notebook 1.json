@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "f09d860c-25e2-469e-85ba-aa7690ee6be8"
+				"spark.autotune.trackingId": "8dd375f9-5ac6-482b-82c4-29595adf5ad3"
 			}
 		},
 		"metadata": {
@@ -52,16 +52,13 @@
 			{
 				"cell_type": "code",
 				"metadata": {
-					"microsoft": {
-						"language": "sparksql"
-					}
+					"collapsed": false
 				},
 				"source": [
-					"%%sql\r\n",
-					"\r\n",
-					"SELECT 1"
+					"df = spark.sql(\"select *from sumavg\")\r\n",
+					"display(df)"
 				],
-				"execution_count": null
+				"execution_count": 10
 			},
 			{
 				"cell_type": "code",
@@ -74,18 +71,13 @@
 						"transient": {
 							"deleting": false
 						}
-					},
-					"microsoft": {
-						"language": "sparksql"
-					},
-					"collapsed": false
+					}
 				},
 				"source": [
-					"%%sql\r\n",
-					"\r\n",
-					"SELECT 1+1"
+					"df.write.mode(\"overwrite\").csv(\"/NYCTaxi/csvfile\")\r\n",
+					"df.write.mode(\"overwrite\").parquet(\"/NYCTaxi/parquetfile\")"
 				],
-				"execution_count": 1
+				"execution_count": 11
 			}
 		]
 	}
