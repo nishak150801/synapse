@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "USE Demo\nGO\nCREATE MASTER KEY ENCRYPTION BY PASSWORD='Hello@1508'\n\n\nCREATE DATABASE SCOPED CREDENTIAL tryCreds \nWITH IDENTITY='SHARED ACCESS SIGNATURE',\nSECRET='sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2023-07-13T17:15:09Z&st=2023-07-13T09:15:09Z&spr=https&sig=%2BWoLtAnGz2tsk%2BjtA2IclXZoHbFzh%2BzPgDHg1r8TcFw%3D'\nGO\n\nCREATE EXTERNAL DATA SOURCE DEMO WITH(\n    LOCATION = 'https://987532356.dfs.core.windows.net/',\n    CREDENTIAL = tryCreds\n)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "Demo",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
